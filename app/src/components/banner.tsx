@@ -1,13 +1,16 @@
 import { Textarea } from "./ui/textarea";
 
-interface BannerProps {}
-export default function Banner(props: BannerProps) {
+interface BannerProps {
+  valuesTextArea: string;
+}
+export default function Banner({ valuesTextArea }: BannerProps) {
   return (
     <div className="flex flex-col flex-1 gap-4">
       <div className="grid grid-rows-2 gap-4 flex-1">
         <Textarea
           className="resize-none p-4 leading-relaxed"
           placeholder="Inclua o prompt para a IA..."
+          value={valuesTextArea}
         />
         <Textarea
           className="resize-none p-4 leading-relaxed"
